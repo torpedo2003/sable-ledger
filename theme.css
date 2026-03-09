@@ -168,3 +168,265 @@ body {
   --hr-color: var(--sl-color-border-muted);
   --inline-title-color: var(--text-normal);
 }
+
+/* Workspace chrome */
+
+body {
+  background:
+    radial-gradient(circle at top left, rgb(255 255 255 / 0.22), transparent 32%),
+    radial-gradient(circle at bottom right, rgb(179 106 69 / 0.08), transparent 24%),
+    var(--background-primary);
+  color: var(--text-normal);
+}
+
+.workspace,
+.workspace-split,
+.workspace-leaf,
+.workspace-tab-container,
+.mod-root .view-content {
+  background: transparent;
+}
+
+.workspace-ribbon,
+.workspace-sidedock-vault-profile,
+.status-bar,
+.titlebar,
+.workspace-leaf-content[data-type="markdown"] .view-header {
+  background: color-mix(in srgb, var(--background-secondary) 88%, transparent);
+  border-color: var(--background-modifier-border);
+}
+
+.status-bar,
+.titlebar {
+  backdrop-filter: blur(18px);
+}
+
+.workspace-ribbon.mod-left::after,
+.workspace-ribbon.mod-right::before {
+  background-color: var(--background-modifier-border);
+}
+
+.view-header-title,
+.inline-title {
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+/* Sidebars and tabs */
+
+.workspace-sidedock,
+.mod-left-split .workspace-tab-container,
+.mod-right-split .workspace-tab-container,
+.workspace-tabs .workspace-leaf {
+  background: color-mix(in srgb, var(--background-secondary) 80%, transparent);
+}
+
+.workspace-tab-header-container {
+  gap: 0.35rem;
+  padding: 0.45rem 0.6rem 0;
+  background: transparent;
+}
+
+.workspace-tab-header {
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: calc(var(--sl-radius-m) - 2px);
+  color: var(--tab-text-color);
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.workspace-tab-header:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.workspace-tab-header.is-active {
+  background: var(--tab-background-active);
+  border-color: var(--sl-color-border-selection);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18);
+}
+
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+  font-weight: 600;
+}
+
+.nav-files-container,
+.nav-folder-children,
+.tree-item-self,
+.search-result-file-matches {
+  border-radius: var(--sl-radius-s);
+}
+
+.tree-item-self {
+  margin: 0.1rem 0;
+  padding-top: 0.24rem;
+  padding-bottom: 0.24rem;
+  transition: background-color 140ms ease, color 140ms ease, transform 140ms ease;
+}
+
+.tree-item-self:hover,
+.suggestion-item:hover,
+.menu-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+.tree-item-self.is-active,
+.suggestion-item.is-selected {
+  background: linear-gradient(90deg, var(--sl-color-accent-soft), transparent 88%);
+  color: var(--text-normal);
+}
+
+/* Editor typography */
+
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view {
+  font-family: var(--font-text);
+  color: var(--text-normal);
+}
+
+.markdown-source-view.mod-cm6 .cm-contentContainer,
+.markdown-preview-view .markdown-preview-sizer {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.markdown-rendered,
+.markdown-source-view.mod-cm6 .cm-content {
+  line-height: var(--line-height-normal);
+  letter-spacing: 0.002em;
+}
+
+.markdown-rendered :is(h1, h2, h3),
+.HyperMD-header {
+  font-family: var(--sl-font-heading);
+  letter-spacing: -0.03em;
+  color: var(--text-normal);
+}
+
+.markdown-rendered h1,
+.HyperMD-header-1 {
+  font-weight: 650;
+}
+
+.markdown-rendered h2,
+.HyperMD-header-2,
+.markdown-rendered h3,
+.HyperMD-header-3 {
+  font-weight: 600;
+}
+
+.markdown-rendered p,
+.markdown-rendered ul,
+.markdown-rendered ol {
+  color: var(--text-normal);
+}
+
+.markdown-rendered a,
+.cm-link,
+.external-link {
+  color: var(--text-accent);
+  text-decoration-color: color-mix(in srgb, var(--interactive-accent) 44%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+.cm-line {
+  padding-top: 0.08rem;
+  padding-bottom: 0.08rem;
+}
+
+.markdown-source-view.mod-cm6 .cm-active,
+.is-focused .workspace-leaf.mod-active .view-content {
+  caret-color: var(--interactive-accent);
+}
+
+/* Callouts, quotes, tables, and code */
+
+.callout {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--sl-radius-m);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--sl-color-surface-raised) 92%, transparent), transparent 140%);
+  box-shadow: var(--sl-shadow-surface);
+  padding: 0.9rem 1rem;
+}
+
+.callout-title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.markdown-rendered blockquote,
+.HyperMD-quote {
+  background: var(--blockquote-background-color);
+  border-inline-start: 2px solid var(--interactive-accent);
+  border-radius: 0 var(--sl-radius-m) var(--sl-radius-m) 0;
+}
+
+.markdown-rendered blockquote {
+  padding: 0.9rem 1rem;
+}
+
+.table-view-table,
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--sl-radius-m);
+}
+
+.markdown-rendered th,
+.markdown-rendered td,
+.table-view-table th,
+.table-view-table td {
+  border-inline-end: 1px solid var(--background-modifier-border);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 0.75rem 0.9rem;
+}
+
+.markdown-rendered th,
+.table-view-table th {
+  background: color-mix(in srgb, var(--background-secondary) 82%, transparent);
+  color: var(--text-normal);
+  font-weight: 600;
+}
+
+.markdown-rendered tr:last-child td,
+.table-view-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.markdown-rendered td:last-child,
+.markdown-rendered th:last-child,
+.table-view-table td:last-child,
+.table-view-table th:last-child {
+  border-inline-end: 0;
+}
+
+pre,
+.HyperMD-codeblock,
+.markdown-rendered code,
+.cm-inline-code {
+  font-family: var(--font-monospace);
+}
+
+pre,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.markdown-rendered pre {
+  background: var(--code-background);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: calc(var(--sl-radius-m) + 2px);
+}
+
+.markdown-rendered pre {
+  padding: 1rem 1.15rem;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05);
+}
+
+.markdown-rendered code,
+.cm-inline-code {
+  color: var(--code-normal);
+  background: color-mix(in srgb, var(--code-background) 72%, transparent);
+  border-radius: 0.45rem;
+  padding: 0.12rem 0.32rem;
+}
