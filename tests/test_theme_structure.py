@@ -105,6 +105,9 @@ class ThemeStructureTests(unittest.TestCase):
 
         for marker in [
             'top: 0.08rem;',
+            'display: flex;',
+            'align-items: flex-start;',
+            'button.copy-code-button .code-block-flair',
             '.markdown-rendered tbody tr:nth-child(odd),',
             '.markdown-rendered tbody tr:nth-child(odd) > td',
             '.markdown-rendered tbody tr:nth-child(even),',
@@ -118,6 +121,17 @@ class ThemeStructureTests(unittest.TestCase):
             '.mermaid .pieTitleText',
             'overflow: visible;',
             'translateX(14px)',
+        ]:
+            self.assertIn(marker, theme_css)
+
+    def test_theme_css_improves_notice_contrast(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            '--cm-notice-bg-default',
+            '--cm-notice-text-default',
+            '.notice',
+            '.notice-message',
         ]:
             self.assertIn(marker, theme_css)
 
