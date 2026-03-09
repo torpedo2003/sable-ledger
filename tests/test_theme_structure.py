@@ -130,11 +130,15 @@ class ThemeStructureTests(unittest.TestCase):
         for marker in [
             '--background-modifier-message: #2b2723;',
             '--background-modifier-message: #f2ece3;',
+            '--cm-notice-text-default: #000;',
             '--cm-notice-bg-default',
             '--cm-notice-text-default',
             '.notice',
             '.notice-message',
             '.notice *',
+            '.theme-dark .tooltip',
+            '.theme-dark .hover-popover',
+            '.theme-dark .popover',
             'color: var(--cm-notice-text-default) !important;',
         ]:
             self.assertIn(marker, theme_css)

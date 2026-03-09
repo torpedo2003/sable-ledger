@@ -196,7 +196,7 @@ body.theme-dark {
   --background-modifier-error: rgb(195 114 100 / 0.16);
   --background-modifier-message: #f2ece3;
   --cm-notice-bg-default: #f2ece3;
-  --cm-notice-text-default: #1e1b18;
+  --cm-notice-text-default: #000;
 
   --text-normal: var(--sl-color-text-normal);
   --text-muted: var(--sl-color-text-muted);
@@ -252,6 +252,21 @@ body {
 .notice *,
 .notice-message {
   color: var(--cm-notice-text-default) !important;
+}
+
+.theme-dark .tooltip,
+.theme-dark .hover-popover,
+.theme-dark .popover {
+  background: #f2ece3 !important;
+  color: #000 !important;
+  border: 1px solid rgb(0 0 0 / 0.08);
+  box-shadow: none;
+}
+
+.theme-dark .tooltip *,
+.theme-dark .hover-popover *,
+.theme-dark .popover * {
+  color: #000 !important;
 }
 
 body.sable-ledger-strong-accents {
