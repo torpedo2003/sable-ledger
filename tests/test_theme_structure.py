@@ -70,6 +70,22 @@ class ThemeStructureTests(unittest.TestCase):
         ]:
             self.assertIn(marker, theme_css)
 
+    def test_theme_css_refines_typography_and_chrome_toward_claude_docs(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            '--sl-font-interface: "Anthropic Sans",',
+            '--sl-font-heading: "Anthropic Sans",',
+            'padding: 0.35rem 0.45rem 0;',
+            'backdrop-filter: blur(6px);',
+            'font-size: 2.45rem;',
+            'font-size: 1.86rem;',
+            'font-size: 1.46rem;',
+        ]:
+            self.assertIn(marker, theme_css)
+
+        self.assertNotIn('Iowan Old Style', theme_css)
+
     def test_theme_css_covers_native_surfaces(self) -> None:
         theme_css = (ROOT / "theme.css").read_text()
 
