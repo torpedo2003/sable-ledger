@@ -100,6 +100,22 @@ class ThemeStructureTests(unittest.TestCase):
         ]:
             self.assertIn(marker, theme_css)
 
+    def test_theme_css_polishes_codeblock_button_table_rows_and_mermaid_pie(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            'top: 0.28rem;',
+            '.markdown-rendered tbody tr:nth-child(odd) td',
+            '.markdown-rendered tbody tr:nth-child(even) td',
+            '.table-view-table tbody tr:nth-child(odd) td',
+            '.table-view-table tbody tr:nth-child(even) td',
+            '.mermaid svg',
+            '.mermaid .pieTitleText',
+            'overflow: visible;',
+            'translateX(14px)',
+        ]:
+            self.assertIn(marker, theme_css)
+
     def test_theme_css_covers_native_surfaces(self) -> None:
         theme_css = (ROOT / "theme.css").read_text()
 

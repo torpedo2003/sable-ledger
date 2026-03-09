@@ -509,6 +509,16 @@ button.mod-cta,
   border-bottom: 0;
 }
 
+.markdown-rendered tbody tr:nth-child(odd) td,
+.table-view-table tbody tr:nth-child(odd) td {
+  background: color-mix(in srgb, var(--sl-color-surface-raised) 72%, transparent);
+}
+
+.markdown-rendered tbody tr:nth-child(even) td,
+.table-view-table tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--background-primary) 92%, transparent);
+}
+
 .markdown-rendered td:last-child,
 .markdown-rendered th:last-child,
 .table-view-table td:last-child,
@@ -551,7 +561,7 @@ pre,
 
 .markdown-rendered pre .code-block-flair {
   position: absolute;
-  top: 0.52rem;
+  top: 0.36rem;
   right: 0.85rem;
   z-index: 1;
   padding: 0;
@@ -565,7 +575,7 @@ pre,
 }
 
 .markdown-rendered pre button.copy-code-button {
-  top: 0.42rem;
+  top: 0.28rem;
   right: 0.55rem;
   border: 0;
   box-shadow: none;
@@ -608,6 +618,14 @@ pre,
   background: color-mix(in srgb, var(--code-background) 72%, transparent);
   border-radius: 0.45rem;
   padding: 0.12rem 0.32rem;
+}
+
+.mermaid svg {
+  overflow: visible;
+}
+
+.mermaid .pieTitleText {
+  transform: translateX(14px);
 }
 
 /* Dataview */
