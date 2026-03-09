@@ -128,10 +128,29 @@ class ThemeStructureTests(unittest.TestCase):
         theme_css = (ROOT / "theme.css").read_text()
 
         for marker in [
+            '--background-modifier-message: #2b2723;',
+            '--background-modifier-message: #f2ece3;',
             '--cm-notice-bg-default',
             '--cm-notice-text-default',
             '.notice',
             '.notice-message',
+            '.notice *',
+            'color: var(--cm-notice-text-default) !important;',
+        ]:
+            self.assertIn(marker, theme_css)
+
+    def test_theme_css_forces_copy_button_to_top_alignment(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            'position: absolute;',
+            'top: -0.18rem !important;',
+            'top: -0.12rem !important;',
+            'bottom: auto !important;',
+            'padding-top: 0;',
+            '.copy-code-button .code-block-flair',
+            'transform: translateY(-6px) !important;',
+            'min-height: 0 !important;',
         ]:
             self.assertIn(marker, theme_css)
 

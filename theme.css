@@ -130,7 +130,7 @@ body.theme-light {
   --background-modifier-box-shadow: none;
   --background-modifier-success: rgb(86 124 98 / 0.12);
   --background-modifier-error: rgb(166 94 82 / 0.12);
-  --background-modifier-message: rgb(140 123 103 / 0.14);
+  --background-modifier-message: #2b2723;
   --cm-notice-bg-default: #2b2723;
   --cm-notice-text-default: #fffaf2;
 
@@ -194,7 +194,7 @@ body.theme-dark {
   --background-modifier-box-shadow: none;
   --background-modifier-success: rgb(108 149 122 / 0.14);
   --background-modifier-error: rgb(195 114 100 / 0.16);
-  --background-modifier-message: rgb(169 151 132 / 0.14);
+  --background-modifier-message: #f2ece3;
   --cm-notice-bg-default: #f2ece3;
   --cm-notice-text-default: #1e1b18;
 
@@ -249,8 +249,9 @@ body {
   border: 1px solid color-mix(in srgb, var(--cm-notice-text-default) 12%, transparent);
 }
 
+.notice *,
 .notice-message {
-  color: var(--cm-notice-text-default);
+  color: var(--cm-notice-text-default) !important;
 }
 
 body.sable-ledger-strong-accents {
@@ -592,7 +593,7 @@ pre,
 
 .markdown-rendered pre .code-block-flair {
   position: absolute;
-  top: 0.14rem;
+  top: -0.12rem !important;
   right: 0.85rem;
   z-index: 1;
   padding: 0;
@@ -604,11 +605,14 @@ pre,
   letter-spacing: 0.01em;
   text-transform: lowercase;
   line-height: 1;
+  min-height: 0 !important;
 }
 
 .markdown-rendered pre button.copy-code-button {
-  top: 0.08rem;
+  position: absolute;
+  top: -0.18rem !important;
   right: 0.55rem;
+  bottom: auto !important;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -620,7 +624,7 @@ pre,
 
 .markdown-rendered pre button.copy-code-button .code-block-flair {
   margin-top: 0;
-  transform: translateY(-2px);
+  transform: translateY(-6px) !important;
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
