@@ -104,11 +104,16 @@ class ThemeStructureTests(unittest.TestCase):
         theme_css = (ROOT / "theme.css").read_text()
 
         for marker in [
-            'top: 0.28rem;',
-            '.markdown-rendered tbody tr:nth-child(odd) td',
-            '.markdown-rendered tbody tr:nth-child(even) td',
-            '.table-view-table tbody tr:nth-child(odd) td',
-            '.table-view-table tbody tr:nth-child(even) td',
+            'top: 0.08rem;',
+            '.markdown-rendered tbody tr:nth-child(odd),',
+            '.markdown-rendered tbody tr:nth-child(odd) > td',
+            '.markdown-rendered tbody tr:nth-child(even),',
+            '.markdown-rendered tbody tr:nth-child(even) > td',
+            '.table-view-table tbody tr:nth-child(odd),',
+            '.table-view-table tbody tr:nth-child(odd) > td',
+            '.table-view-table tbody tr:nth-child(even),',
+            '.table-view-table tbody tr:nth-child(even) > td',
+            'background: inherit;',
             '.mermaid svg',
             '.mermaid .pieTitleText',
             'overflow: visible;',

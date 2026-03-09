@@ -509,13 +509,30 @@ button.mod-cta,
   border-bottom: 0;
 }
 
-.markdown-rendered tbody tr:nth-child(odd) td,
-.table-view-table tbody tr:nth-child(odd) td {
+.markdown-rendered tbody tr:nth-child(odd),
+.markdown-rendered tbody tr:nth-child(odd) > td {
   background: color-mix(in srgb, var(--sl-color-surface-raised) 72%, transparent);
 }
 
-.markdown-rendered tbody tr:nth-child(even) td,
-.table-view-table tbody tr:nth-child(even) td {
+.table-view-table tbody tr:nth-child(odd),
+.table-view-table tbody tr:nth-child(odd) > td {
+  background: color-mix(in srgb, var(--sl-color-surface-raised) 72%, transparent);
+}
+
+.markdown-rendered tbody tr:nth-child(odd) > td,
+.table-view-table tbody tr:nth-child(odd) > td,
+.markdown-rendered tbody tr:nth-child(even) > td,
+.table-view-table tbody tr:nth-child(even) > td {
+  background: inherit;
+}
+
+.markdown-rendered tbody tr:nth-child(even),
+.markdown-rendered tbody tr:nth-child(even) > td {
+  background: color-mix(in srgb, var(--background-primary) 92%, transparent);
+}
+
+.table-view-table tbody tr:nth-child(even),
+.table-view-table tbody tr:nth-child(even) > td {
   background: color-mix(in srgb, var(--background-primary) 92%, transparent);
 }
 
@@ -561,7 +578,7 @@ pre,
 
 .markdown-rendered pre .code-block-flair {
   position: absolute;
-  top: 0.36rem;
+  top: 0.14rem;
   right: 0.85rem;
   z-index: 1;
   padding: 0;
@@ -572,10 +589,11 @@ pre,
   font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: lowercase;
+  line-height: 1;
 }
 
 .markdown-rendered pre button.copy-code-button {
-  top: 0.28rem;
+  top: 0.08rem;
   right: 0.55rem;
   border: 0;
   box-shadow: none;
