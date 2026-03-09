@@ -86,6 +86,20 @@ class ThemeStructureTests(unittest.TestCase):
 
         self.assertNotIn('Iowan Old Style', theme_css)
 
+    def test_theme_css_refines_codeblocks_and_top_corner_chrome(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            '--sl-code-shell-bg',
+            '--sl-code-shell-header',
+            '.markdown-rendered pre::before',
+            '.code-block-flair',
+            '.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock',
+            '.titlebar-button-container.mod-left',
+            '.titlebar-button-container.mod-right',
+        ]:
+            self.assertIn(marker, theme_css)
+
     def test_theme_css_covers_native_surfaces(self) -> None:
         theme_css = (ROOT / "theme.css").read_text()
 
