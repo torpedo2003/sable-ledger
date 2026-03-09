@@ -1,3 +1,9 @@
+---
+area: Reading
+status: In Review
+theme_section: Typography
+---
+
 # Longform Reading
 
 Good notes should feel readable before they feel technical. This page exists to check paragraph rhythm, hierarchy, block spacing, tables, quotations, and code under both light and dark appearance modes.

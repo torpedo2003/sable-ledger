@@ -3,14 +3,74 @@ Sable Ledger
 An Obsidian theme inspired by warm editorial interfaces.
 */
 
+/* @settings
+
+name: Sable Ledger
+id: sable-ledger
+settings:
+  -
+    id: sable-ledger-layout-heading
+    title: Layout
+    type: heading
+    level: 2
+  -
+    id: sl-readable-line-width
+    title: Readable line width
+    description: Controls the max width of note content in reading mode and Live Preview.
+    type: variable-number-slider
+    default: 860
+    format: px
+    min: 680
+    max: 1120
+    step: 20
+  -
+    id: sl-surface-radius
+    title: Surface radius
+    description: Adjusts the softness of cards, tabs, callouts, and panels.
+    type: variable-number-slider
+    default: 14
+    format: px
+    min: 6
+    max: 24
+    step: 1
+  -
+    id: sable-ledger-accent-heading
+    title: Accent
+    type: heading
+    level: 2
+  -
+    id: sl-accent-light
+    title: Light mode accent
+    type: variable-color
+    format: hex
+    default: '#b36a45'
+  -
+    id: sl-accent-dark
+    title: Dark mode accent
+    type: variable-color
+    format: hex
+    default: '#d59667'
+  -
+    id: sable-ledger-strong-accents
+    title: Stronger accents
+    description: Gives links, selections, and active surfaces a little more emphasis.
+    type: class-toggle
+
+*/
+
 body {
   --sl-font-interface: "Aptos", "Segoe UI Variable Text", "SF Pro Text", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --sl-font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "New York", ui-serif, serif;
   --sl-font-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Code", "IBM Plex Mono", ui-monospace, monospace;
 
-  --sl-radius-s: 8px;
-  --sl-radius-m: 14px;
-  --sl-radius-l: 20px;
+  --sl-readable-line-width: 860px;
+  --sl-surface-radius: 14px;
+  --sl-accent-light: #b36a45;
+  --sl-accent-dark: #d59667;
+
+  --sl-radius-s: calc(var(--sl-surface-radius) - 6px);
+  --sl-radius-m: var(--sl-surface-radius);
+  --sl-radius-l: calc(var(--sl-surface-radius) + 6px);
 
   --sl-shadow-surface: 0 16px 40px -24px rgb(33 28 23 / 0.24);
   --sl-shadow-floating: 0 24px 60px -28px rgb(20 16 13 / 0.32);
@@ -49,7 +109,7 @@ body.theme-light {
   --sl-color-border-strong: rgb(92 70 44 / 0.28);
   --sl-color-border-selection: rgb(143 93 63 / 0.32);
 
-  --sl-color-accent: #b36a45;
+  --sl-color-accent: var(--sl-accent-light);
   --sl-color-accent-hover: #98583a;
   --sl-color-accent-soft: rgb(179 106 69 / 0.13);
   --sl-color-selection: rgb(191 145 104 / 0.18);
@@ -108,7 +168,7 @@ body.theme-dark {
   --sl-color-border-strong: rgb(234 214 189 / 0.22);
   --sl-color-border-selection: rgb(217 161 118 / 0.26);
 
-  --sl-color-accent: #d59667;
+  --sl-color-accent: var(--sl-accent-dark);
   --sl-color-accent-hover: #e6ac81;
   --sl-color-accent-soft: rgb(213 150 103 / 0.16);
   --sl-color-selection: rgb(213 150 103 / 0.2);
@@ -167,6 +227,11 @@ body {
   --checklist-done-color: var(--text-faint);
   --hr-color: var(--sl-color-border-muted);
   --inline-title-color: var(--text-normal);
+}
+
+body.sable-ledger-strong-accents {
+  --sl-color-accent-soft: color-mix(in srgb, var(--sl-color-accent) 22%, transparent);
+  --sl-color-selection: color-mix(in srgb, var(--sl-color-accent) 28%, transparent);
 }
 
 /* Workspace chrome */
@@ -286,7 +351,7 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-contentContainer,
 .markdown-preview-view .markdown-preview-sizer {
-  max-width: 860px;
+  max-width: var(--sl-readable-line-width);
   margin: 0 auto;
 }
 
@@ -429,4 +494,135 @@ pre,
   background: color-mix(in srgb, var(--code-background) 72%, transparent);
   border-radius: 0.45rem;
   padding: 0.12rem 0.32rem;
+}
+
+/* Dataview */
+
+.dataview.dataview-container,
+.dataview.inline-field,
+.dataview.dataview-inline-query {
+  color: var(--text-normal);
+}
+
+.dataview .table-view-table,
+.dataview.table-view-table {
+  box-shadow: var(--sl-shadow-surface);
+  background: color-mix(in srgb, var(--sl-color-surface-raised) 92%, transparent);
+}
+
+.dataview.inline-field {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--sl-color-accent-soft) 80%, transparent);
+}
+
+.dataview.inline-field-key,
+.dataview.small-text {
+  color: var(--text-faint);
+}
+
+.dataview.inline-field-value,
+.dataview-result-list-li,
+.dataview-result-object-li {
+  color: var(--text-normal);
+}
+
+.dataview.task-list-item,
+.dataview.task-list-basic-item,
+.dataview-result-list-li {
+  padding: 0.3rem 0;
+}
+
+.dataview-error,
+.dataview.dataview-error-box {
+  border-radius: var(--sl-radius-m);
+  border: 1px solid color-mix(in srgb, var(--color-red, #cc6a5c) 28%, transparent);
+  background: color-mix(in srgb, var(--background-modifier-error) 88%, transparent);
+}
+
+.dataview.dataview-error-box {
+  padding: 0.85rem 1rem;
+}
+
+/* Kanban */
+
+.kanban-plugin {
+  --kanban-border: var(--background-modifier-border);
+  --kanban-surface: color-mix(in srgb, var(--sl-color-surface-raised) 94%, transparent);
+  --kanban-surface-soft: color-mix(in srgb, var(--background-secondary) 82%, transparent);
+  --kanban-accent-soft: var(--sl-color-accent-soft);
+}
+
+.kanban-plugin__board {
+  gap: 1rem;
+}
+
+.kanban-plugin__lane {
+  border: 1px solid var(--kanban-border);
+  border-radius: calc(var(--sl-radius-m) + 2px);
+  background: linear-gradient(180deg, var(--kanban-surface), transparent 160%);
+  box-shadow: var(--sl-shadow-surface);
+}
+
+.kanban-plugin__lane-header-wrapper,
+.kanban-plugin__item {
+  border-color: var(--kanban-border);
+}
+
+.kanban-plugin__lane-header-wrapper {
+  background: color-mix(in srgb, var(--kanban-surface-soft) 88%, transparent);
+  padding: 0.95rem 1rem;
+}
+
+.kanban-plugin__lane-title {
+  font-family: var(--sl-font-heading);
+  letter-spacing: -0.02em;
+}
+
+.kanban-plugin__lane-title-count {
+  border-radius: 999px;
+  background: var(--kanban-accent-soft);
+  color: var(--text-muted);
+  padding: 0.1rem 0.45rem;
+}
+
+.kanban-plugin__item {
+  background: color-mix(in srgb, var(--background-primary) 84%, transparent);
+  border: 1px solid var(--kanban-border);
+  border-radius: var(--sl-radius-m);
+  box-shadow: 0 10px 30px -24px rgb(0 0 0 / 0.25);
+}
+
+.kanban-plugin__item-title,
+.kanban-plugin__item-title-wrapper {
+  color: var(--text-normal);
+}
+
+.kanban-plugin__item-metadata,
+.kanban-plugin__item-tags,
+.kanban-plugin__meta-value {
+  color: var(--text-muted);
+}
+
+.kanban-plugin__item-tag {
+  border-radius: 999px;
+  background: var(--kanban-accent-soft);
+  color: var(--text-accent);
+}
+
+button.kanban-plugin__new-item-button,
+button.kanban-plugin__lane-action-add,
+button.kanban-plugin__item-submit-button {
+  border-radius: 999px;
+  border: 1px solid var(--kanban-border);
+  background: color-mix(in srgb, var(--background-primary) 88%, transparent);
+}
+
+button.kanban-plugin__new-item-button:hover,
+button.kanban-plugin__lane-action-add:hover,
+button.kanban-plugin__item-submit-button:hover {
+  background: var(--background-modifier-hover);
 }

@@ -1,3 +1,9 @@
+---
+area: Theme Review
+status: Active
+theme_section: Overview
+---
+
 # Sable Ledger
 
 Welcome to the demo vault for **Sable Ledger**, an Obsidian theme shaped by warm editorial restraint.
@@ -33,4 +39,3 @@ The goal is to make Obsidian feel authored.
 | Sidebar | Recede visually |
 | Editor | Stay calm and legible |
 | Accents | Guide, not dominate |
-

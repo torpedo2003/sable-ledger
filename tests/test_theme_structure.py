@@ -63,6 +63,27 @@ class ThemeStructureTests(unittest.TestCase):
         ]:
             self.assertTrue((ROOT / relative_path).exists(), f"{relative_path} must exist")
 
+    def test_theme_css_covers_target_plugins(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            "/* @settings",
+            "/* Dataview */",
+            "/* Kanban */",
+            "sable-ledger-strong-accents",
+        ]:
+            self.assertIn(marker, theme_css)
+
+    def test_demo_vault_has_plugin_showcases_and_configs(self) -> None:
+        for relative_path in [
+            "demo-vault/02-Dataview Showcase.md",
+            "demo-vault/03-Kanban Showcase.md",
+            "demo-vault/04-Callouts and Tables.md",
+            "demo-vault/.obsidian/app.json",
+            "demo-vault/.obsidian/appearance.json",
+        ]:
+            self.assertTrue((ROOT / relative_path).exists(), f"{relative_path} must exist")
+
 
 if __name__ == "__main__":
     unittest.main()
