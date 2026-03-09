@@ -59,8 +59,8 @@ settings:
 */
 
 body {
-  --sl-font-interface: "Anthropic Sans", "Aptos", "Segoe UI Variable Text", "SF Pro Text", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --sl-font-heading: "Anthropic Sans", "Aptos Display", "Segoe UI Variable Display", "SF Pro Display", "Aptos", "Segoe UI Variable Text", "SF Pro Text", ui-sans-serif, system-ui, sans-serif;
+  --sl-font-interface: "Anthropic Sans", "Anthropic Sans Text", "Aptos", "Segoe UI Variable Text", "SF Pro Text", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --sl-font-heading: "Anthropic Sans", "Anthropic Sans Text", "Aptos Display", "Segoe UI Variable Display", "SF Pro Display", "Aptos", "Segoe UI Variable Text", "SF Pro Text", ui-sans-serif, system-ui, sans-serif;
   --sl-font-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Code", "IBM Plex Mono", ui-monospace, monospace;
 
   --sl-readable-line-width: 1080px;

@@ -74,8 +74,8 @@ class ThemeStructureTests(unittest.TestCase):
         theme_css = (ROOT / "theme.css").read_text()
 
         for marker in [
-            '--sl-font-interface: "Anthropic Sans",',
-            '--sl-font-heading: "Anthropic Sans",',
+            '--sl-font-interface: "Anthropic Sans", "Anthropic Sans Text",',
+            '--sl-font-heading: "Anthropic Sans", "Anthropic Sans Text",',
             'padding: 0.35rem 0.45rem 0;',
             'backdrop-filter: blur(6px);',
             'font-size: 2.45rem;',
