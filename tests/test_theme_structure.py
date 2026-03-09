@@ -84,6 +84,28 @@ class ThemeStructureTests(unittest.TestCase):
         ]:
             self.assertTrue((ROOT / relative_path).exists(), f"{relative_path} must exist")
 
+    def test_readme_covers_installation_modes_and_plugin_scope(self) -> None:
+        readme_path = ROOT / "README.md"
+        self.assertTrue(readme_path.exists(), "README.md must exist")
+
+        readme = readme_path.read_text()
+        for marker in [
+            "Installation",
+            "light mode",
+            "dark mode",
+            "demo vault",
+            "Dataview",
+            "Kanban",
+            "Style Settings",
+        ]:
+            self.assertIn(marker, readme)
+
+    def test_manifest_and_versions_stay_in_sync(self) -> None:
+        manifest = json.loads((ROOT / "manifest.json").read_text())
+        versions = json.loads((ROOT / "versions.json").read_text())
+
+        self.assertEqual(versions[manifest["version"]], manifest["minAppVersion"])
+
 
 if __name__ == "__main__":
     unittest.main()
