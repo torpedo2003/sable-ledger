@@ -1,0 +1,11 @@
+{
+  "name": "Sable Ledger",
+  "version": "0.1.0",
+  "minAppVersion": "1.6.0",
+  "author": "Lei Yu",
+  "authorUrl": "https://github.com/leiyu",
+  "modes": [
+    "light",
+    "dark"
+  ]
+}
