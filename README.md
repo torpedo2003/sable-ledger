@@ -2,11 +2,15 @@
 
 Sable Ledger is an Obsidian theme inspired by Anthropic's warm editorial aesthetic. It is designed for quiet reading, serious note-taking, and a cleaner neutral palette across the native app UI.
 
+This round also refines the theme against the visual direction of `code.claude.com`, especially the calmer product-doc treatment of typography, colors, and chrome.
+
 ## Highlights
 
 - cleaner neutral palette instead of the warmer first draft
 - Support for both light mode and dark mode
 - Desktop-first layout tuned for reading and writing, with a default readable width of `1080px`
+- sans-forward typography with `Anthropic Sans`-first local fallbacks
+- lighter chrome and a more docs-like feel for tabs, headers, and controls
 - Compatibility styling for Dataview and Kanban
 - Style Settings support for line width, surface radius, and accent tuning
 - Included demo vault for visual review and regression checking
@@ -25,11 +29,11 @@ If you want to inspect the bundled demo vault, open `demo-vault/` as a separate 
 
 ### light mode
 
-Light mode now uses bone-white and pale stone neutrals, low-noise borders, and ink-like text. The goal is to feel closer to Claude's calmer public product surfaces instead of a bronze editorial layout.
+Light mode now uses bone-white and pale stone neutrals, low-noise borders, and ink-like text. The goal is to feel closer to Claude's calmer public product surfaces instead of a bronze editorial layout, with lighter chrome around the content pane.
 
 ### dark mode
 
-Dark mode now uses graphite-black neutrals and soft porcelain text instead of brown-heavy charcoal. It stays calm at night without looking sepia.
+Dark mode now uses graphite-black neutrals and soft porcelain text instead of brown-heavy charcoal. It stays calm at night without looking sepia, and keeps the same docs-like feel in sidebars, headers, and controls.
 
 ## Plugin compatibility
 

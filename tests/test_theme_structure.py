@@ -143,6 +143,17 @@ class ThemeStructureTests(unittest.TestCase):
         ]:
             self.assertIn(marker, readme)
 
+    def test_readme_mentions_round3_claude_docs_refinement(self) -> None:
+        readme = (ROOT / "README.md").read_text()
+
+        for marker in [
+            "code.claude.com",
+            "sans-forward typography",
+            "lighter chrome",
+            "docs-like feel",
+        ]:
+            self.assertIn(marker, readme)
+
     def test_manifest_and_versions_stay_in_sync(self) -> None:
         manifest = json.loads((ROOT / "manifest.json").read_text())
         versions = json.loads((ROOT / "versions.json").read_text())
