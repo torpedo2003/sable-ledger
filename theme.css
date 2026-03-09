@@ -18,10 +18,10 @@ settings:
     title: Readable line width
     description: Controls the max width of note content in reading mode and Live Preview.
     type: variable-number-slider
-    default: 860
+    default: 1080
     format: px
     min: 680
-    max: 1120
+    max: 1240
     step: 20
   -
     id: sl-surface-radius
@@ -63,7 +63,8 @@ body {
   --sl-font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "New York", ui-serif, serif;
   --sl-font-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Code", "IBM Plex Mono", ui-monospace, monospace;
 
-  --sl-readable-line-width: 860px;
+  --sl-readable-line-width: 1080px;
+  --file-line-width: var(--sl-readable-line-width);
   --sl-surface-radius: 14px;
   --sl-accent-light: #b36a45;
   --sl-accent-dark: #d59667;
@@ -351,7 +352,8 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-contentContainer,
 .markdown-preview-view .markdown-preview-sizer {
-  max-width: var(--sl-readable-line-width);
+  width: 100%;
+  max-width: var(--file-line-width);
   margin: 0 auto;
 }
 

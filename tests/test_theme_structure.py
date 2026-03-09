@@ -45,6 +45,17 @@ class ThemeStructureTests(unittest.TestCase):
         ]:
             self.assertIn(marker, theme_css)
 
+    def test_theme_css_uses_wider_readable_width_defaults(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            "--sl-readable-line-width: 1080px;",
+            "--file-line-width: var(--sl-readable-line-width);",
+            "default: 1080",
+            "max: 1240",
+        ]:
+            self.assertIn(marker, theme_css)
+
     def test_theme_css_covers_native_surfaces(self) -> None:
         theme_css = (ROOT / "theme.css").read_text()
 
