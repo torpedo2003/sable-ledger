@@ -43,13 +43,13 @@ settings:
     title: Light mode accent
     type: variable-color
     format: hex
-    default: '#b36a45'
+    default: '#8c7b67'
   -
     id: sl-accent-dark
     title: Dark mode accent
     type: variable-color
     format: hex
-    default: '#d59667'
+    default: '#a99784'
   -
     id: sable-ledger-strong-accents
     title: Stronger accents
@@ -66,15 +66,15 @@ body {
   --sl-readable-line-width: 1080px;
   --file-line-width: var(--sl-readable-line-width);
   --sl-surface-radius: 14px;
-  --sl-accent-light: #b36a45;
-  --sl-accent-dark: #d59667;
+  --sl-accent-light: #8c7b67;
+  --sl-accent-dark: #a99784;
 
   --sl-radius-s: calc(var(--sl-surface-radius) - 6px);
   --sl-radius-m: var(--sl-surface-radius);
   --sl-radius-l: calc(var(--sl-surface-radius) + 6px);
 
-  --sl-shadow-surface: 0 16px 40px -24px rgb(33 28 23 / 0.24);
-  --sl-shadow-floating: 0 24px 60px -28px rgb(20 16 13 / 0.32);
+  --sl-shadow-surface: 0 12px 28px -24px rgb(15 15 15 / 0.16);
+  --sl-shadow-floating: 0 20px 48px -30px rgb(15 15 15 / 0.2);
 
   --font-interface: var(--sl-font-interface);
   --font-text: var(--sl-font-interface);
@@ -93,41 +93,41 @@ body {
 }
 
 body.theme-light {
-  --sl-color-bg-primary: #f4efe7;
-  --sl-color-bg-primary-alt: #efe7db;
-  --sl-color-bg-secondary: #f8f4ed;
-  --sl-color-bg-secondary-alt: #ece3d6;
-  --sl-color-bg-tertiary: #e4d8c6;
-  --sl-color-surface-raised: rgb(255 252 247 / 0.82);
-  --sl-color-surface-floating: rgb(251 245 237 / 0.92);
+  --sl-color-bg-primary: #f7f5f2;
+  --sl-color-bg-primary-alt: #f3f1ed;
+  --sl-color-bg-secondary: #f1efeb;
+  --sl-color-bg-secondary-alt: #ebe8e2;
+  --sl-color-bg-tertiary: #e1ddd6;
+  --sl-color-surface-raised: rgb(255 255 253 / 0.74);
+  --sl-color-surface-floating: rgb(251 250 247 / 0.88);
 
-  --sl-color-text-normal: #2b241d;
-  --sl-color-text-muted: #6f6456;
-  --sl-color-text-faint: #958877;
-  --sl-color-text-accent: #8f5d3f;
+  --sl-color-text-normal: #1f1d1a;
+  --sl-color-text-muted: #67625b;
+  --sl-color-text-faint: #938b81;
+  --sl-color-text-accent: #6f6458;
 
-  --sl-color-border-muted: rgb(120 98 72 / 0.16);
-  --sl-color-border-strong: rgb(92 70 44 / 0.28);
-  --sl-color-border-selection: rgb(143 93 63 / 0.32);
+  --sl-color-border-muted: rgb(51 47 43 / 0.11);
+  --sl-color-border-strong: rgb(51 47 43 / 0.18);
+  --sl-color-border-selection: rgb(140 123 103 / 0.2);
 
   --sl-color-accent: var(--sl-accent-light);
-  --sl-color-accent-hover: #98583a;
-  --sl-color-accent-soft: rgb(179 106 69 / 0.13);
-  --sl-color-selection: rgb(191 145 104 / 0.18);
+  --sl-color-accent-hover: #756653;
+  --sl-color-accent-soft: rgb(140 123 103 / 0.1);
+  --sl-color-selection: rgb(140 123 103 / 0.14);
 
   --background-primary: var(--sl-color-bg-primary);
   --background-primary-alt: var(--sl-color-bg-primary-alt);
   --background-secondary: var(--sl-color-bg-secondary);
   --background-secondary-alt: var(--sl-color-bg-secondary-alt);
-  --background-modifier-hover: rgb(143 93 63 / 0.08);
-  --background-modifier-active-hover: rgb(143 93 63 / 0.12);
+  --background-modifier-hover: rgb(31 29 26 / 0.05);
+  --background-modifier-active-hover: rgb(31 29 26 / 0.08);
   --background-modifier-border: var(--sl-color-border-muted);
   --background-modifier-border-hover: var(--sl-color-border-strong);
-  --background-modifier-form-field: rgb(255 250 244 / 0.88);
+  --background-modifier-form-field: rgb(255 255 255 / 0.72);
   --background-modifier-box-shadow: none;
-  --background-modifier-success: rgb(82 127 94 / 0.14);
-  --background-modifier-error: rgb(173 83 68 / 0.14);
-  --background-modifier-message: rgb(203 171 120 / 0.2);
+  --background-modifier-success: rgb(86 124 98 / 0.12);
+  --background-modifier-error: rgb(166 94 82 / 0.12);
+  --background-modifier-message: rgb(140 123 103 / 0.14);
 
   --text-normal: var(--sl-color-text-normal);
   --text-muted: var(--sl-color-text-muted);
@@ -143,50 +143,50 @@ body.theme-light {
   --tab-text-color: var(--sl-color-text-muted);
   --tab-text-color-active: var(--sl-color-text-normal);
   --tab-text-color-focused: var(--sl-color-text-normal);
-  --tab-background-active: rgb(255 250 244 / 0.68);
+  --tab-background-active: rgb(255 255 255 / 0.58);
   --tab-divider-color: transparent;
 
-  --code-normal: #5f3f31;
-  --code-background: rgb(255 249 242 / 0.9);
-  --blockquote-background-color: rgb(255 250 244 / 0.6);
+  --code-normal: #49433d;
+  --code-background: rgb(248 246 242 / 0.92);
+  --blockquote-background-color: rgb(249 247 243 / 0.76);
 }
 
 body.theme-dark {
-  --sl-color-bg-primary: #171310;
-  --sl-color-bg-primary-alt: #1d1814;
-  --sl-color-bg-secondary: #201a16;
-  --sl-color-bg-secondary-alt: #27201b;
-  --sl-color-bg-tertiary: #312923;
-  --sl-color-surface-raised: rgb(34 28 24 / 0.84);
-  --sl-color-surface-floating: rgb(39 32 27 / 0.94);
+  --sl-color-bg-primary: #151515;
+  --sl-color-bg-primary-alt: #181817;
+  --sl-color-bg-secondary: #1b1b1a;
+  --sl-color-bg-secondary-alt: #20201f;
+  --sl-color-bg-tertiary: #292927;
+  --sl-color-surface-raised: rgb(31 31 30 / 0.82);
+  --sl-color-surface-floating: rgb(35 35 34 / 0.9);
 
-  --sl-color-text-normal: #f2eadf;
-  --sl-color-text-muted: #c4b5a4;
-  --sl-color-text-faint: #8e7e6d;
-  --sl-color-text-accent: #e2b48f;
+  --sl-color-text-normal: #f3efe8;
+  --sl-color-text-muted: #c5bdb1;
+  --sl-color-text-faint: #90897f;
+  --sl-color-text-accent: #b9ad9f;
 
-  --sl-color-border-muted: rgb(234 214 189 / 0.12);
-  --sl-color-border-strong: rgb(234 214 189 / 0.22);
-  --sl-color-border-selection: rgb(217 161 118 / 0.26);
+  --sl-color-border-muted: rgb(255 248 239 / 0.09);
+  --sl-color-border-strong: rgb(255 248 239 / 0.16);
+  --sl-color-border-selection: rgb(169 151 132 / 0.22);
 
   --sl-color-accent: var(--sl-accent-dark);
-  --sl-color-accent-hover: #e6ac81;
-  --sl-color-accent-soft: rgb(213 150 103 / 0.16);
-  --sl-color-selection: rgb(213 150 103 / 0.2);
+  --sl-color-accent-hover: #c2b29e;
+  --sl-color-accent-soft: rgb(169 151 132 / 0.14);
+  --sl-color-selection: rgb(169 151 132 / 0.18);
 
   --background-primary: var(--sl-color-bg-primary);
   --background-primary-alt: var(--sl-color-bg-primary-alt);
   --background-secondary: var(--sl-color-bg-secondary);
   --background-secondary-alt: var(--sl-color-bg-secondary-alt);
-  --background-modifier-hover: rgb(242 234 223 / 0.06);
-  --background-modifier-active-hover: rgb(242 234 223 / 0.09);
+  --background-modifier-hover: rgb(243 239 232 / 0.05);
+  --background-modifier-active-hover: rgb(243 239 232 / 0.08);
   --background-modifier-border: var(--sl-color-border-muted);
   --background-modifier-border-hover: var(--sl-color-border-strong);
-  --background-modifier-form-field: rgb(39 32 27 / 0.9);
+  --background-modifier-form-field: rgb(38 38 36 / 0.9);
   --background-modifier-box-shadow: none;
-  --background-modifier-success: rgb(112 169 126 / 0.16);
-  --background-modifier-error: rgb(214 120 104 / 0.18);
-  --background-modifier-message: rgb(213 150 103 / 0.18);
+  --background-modifier-success: rgb(108 149 122 / 0.14);
+  --background-modifier-error: rgb(195 114 100 / 0.16);
+  --background-modifier-message: rgb(169 151 132 / 0.14);
 
   --text-normal: var(--sl-color-text-normal);
   --text-muted: var(--sl-color-text-muted);
@@ -202,15 +202,15 @@ body.theme-dark {
   --tab-text-color: var(--sl-color-text-muted);
   --tab-text-color-active: var(--sl-color-text-normal);
   --tab-text-color-focused: var(--sl-color-text-normal);
-  --tab-background-active: rgb(45 37 31 / 0.76);
+  --tab-background-active: rgb(33 33 31 / 0.82);
   --tab-divider-color: transparent;
 
-  --code-normal: #f2c8a6;
-  --code-background: rgb(28 23 19 / 0.92);
-  --blockquote-background-color: rgb(41 34 29 / 0.72);
+  --code-normal: #dcd3c6;
+  --code-background: rgb(24 24 23 / 0.96);
+  --blockquote-background-color: rgb(28 28 27 / 0.84);
 
-  --sl-shadow-surface: 0 18px 44px -28px rgb(0 0 0 / 0.66);
-  --sl-shadow-floating: 0 28px 72px -36px rgb(0 0 0 / 0.74);
+  --sl-shadow-surface: 0 16px 36px -28px rgb(0 0 0 / 0.46);
+  --sl-shadow-floating: 0 24px 56px -34px rgb(0 0 0 / 0.56);
 }
 
 body {
@@ -238,10 +238,7 @@ body.sable-ledger-strong-accents {
 /* Workspace chrome */
 
 body {
-  background:
-    radial-gradient(circle at top left, rgb(255 255 255 / 0.22), transparent 32%),
-    radial-gradient(circle at bottom right, rgb(179 106 69 / 0.08), transparent 24%),
-    var(--background-primary);
+  background: var(--background-primary);
   color: var(--text-normal);
 }
 
@@ -258,13 +255,13 @@ body {
 .status-bar,
 .titlebar,
 .workspace-leaf-content[data-type="markdown"] .view-header {
-  background: color-mix(in srgb, var(--background-secondary) 88%, transparent);
+  background: color-mix(in srgb, var(--background-secondary) 94%, transparent);
   border-color: var(--background-modifier-border);
 }
 
 .status-bar,
 .titlebar {
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(10px);
 }
 
 .workspace-ribbon.mod-left::after,
@@ -284,7 +281,7 @@ body {
 .mod-left-split .workspace-tab-container,
 .mod-right-split .workspace-tab-container,
 .workspace-tabs .workspace-leaf {
-  background: color-mix(in srgb, var(--background-secondary) 80%, transparent);
+  background: color-mix(in srgb, var(--background-secondary) 90%, transparent);
 }
 
 .workspace-tab-header-container {
@@ -309,7 +306,7 @@ body {
 .workspace-tab-header.is-active {
   background: var(--tab-background-active);
   border-color: var(--sl-color-border-selection);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08);
 }
 
 .workspace-tab-header.is-active .workspace-tab-header-inner {
@@ -411,7 +408,7 @@ body {
 .callout {
   border: 1px solid var(--background-modifier-border);
   border-radius: var(--sl-radius-m);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--sl-color-surface-raised) 92%, transparent), transparent 140%);
+  background: color-mix(in srgb, var(--sl-color-surface-raised) 94%, transparent);
   box-shadow: var(--sl-shadow-surface);
   padding: 0.9rem 1rem;
 }
@@ -565,7 +562,7 @@ pre,
 .kanban-plugin__lane {
   border: 1px solid var(--kanban-border);
   border-radius: calc(var(--sl-radius-m) + 2px);
-  background: linear-gradient(180deg, var(--kanban-surface), transparent 160%);
+  background: var(--kanban-surface);
   box-shadow: var(--sl-shadow-surface);
 }
 

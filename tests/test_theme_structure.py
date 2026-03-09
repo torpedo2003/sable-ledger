@@ -56,6 +56,20 @@ class ThemeStructureTests(unittest.TestCase):
         ]:
             self.assertIn(marker, theme_css)
 
+    def test_theme_css_uses_cleaner_neutral_palette_markers(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            "--sl-color-bg-primary: #f7f5f2;",
+            "--sl-color-bg-secondary: #f1efeb;",
+            "--sl-color-text-normal: #1f1d1a;",
+            "--sl-color-bg-primary: #151515;",
+            "--sl-color-bg-secondary: #1b1b1a;",
+            "--sl-color-text-normal: #f3efe8;",
+            "background: var(--background-primary);",
+        ]:
+            self.assertIn(marker, theme_css)
+
     def test_theme_css_covers_native_surfaces(self) -> None:
         theme_css = (ROOT / "theme.css").read_text()
 
