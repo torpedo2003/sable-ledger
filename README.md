@@ -1,12 +1,12 @@
 # Sable Ledger
 
-Sable Ledger is an Obsidian theme inspired by Anthropic's warm editorial aesthetic. It is designed for quiet reading, serious note-taking, and a softer research-workbench feel across the native app UI.
+Sable Ledger is an Obsidian theme inspired by Anthropic's warm editorial aesthetic. It is designed for quiet reading, serious note-taking, and a cleaner neutral palette across the native app UI.
 
 ## Highlights
 
-- Warm editorial surfaces instead of pure white or pure black
+- cleaner neutral palette instead of the warmer first draft
 - Support for both light mode and dark mode
-- Desktop-first layout tuned for reading and writing
+- Desktop-first layout tuned for reading and writing, with a default readable width of `1080px`
 - Compatibility styling for Dataview and Kanban
 - Style Settings support for line width, surface radius, and accent tuning
 - Included demo vault for visual review and regression checking
@@ -25,11 +25,11 @@ If you want to inspect the bundled demo vault, open `demo-vault/` as a separate 
 
 ### light mode
 
-Light mode uses oat and paper tones, low-contrast borders, and deep graphite text. The goal is to make long notes feel published rather than app-like.
+Light mode now uses bone-white and pale stone neutrals, low-noise borders, and ink-like text. The goal is to feel closer to Claude's calmer public product surfaces instead of a bronze editorial layout.
 
 ### dark mode
 
-Dark mode uses warm charcoal surfaces and soft ivory text instead of cold high-contrast black. It is tuned for calmer late-night reading.
+Dark mode now uses graphite-black neutrals and soft porcelain text instead of brown-heavy charcoal. It stays calm at night without looking sepia.
 
 ## Plugin compatibility
 
@@ -41,6 +41,8 @@ Sable Ledger exposes a small set of theme controls through Style Settings:
 - surface radius
 - light and dark accent colors
 - stronger accent mode
+
+The default readable line width is `1080px`, and the slider can extend the layout to `1240px` for wider desktop note panes.
 
 ### Dataview
 

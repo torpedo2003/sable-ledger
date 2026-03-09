@@ -122,6 +122,8 @@ class ThemeStructureTests(unittest.TestCase):
             "Dataview",
             "Kanban",
             "Style Settings",
+            "1080px",
+            "cleaner neutral palette",
         ]:
             self.assertIn(marker, readme)
 
