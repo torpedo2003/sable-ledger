@@ -30,6 +30,21 @@ class ThemeStructureTests(unittest.TestCase):
     def test_theme_css_exists(self) -> None:
         self.assertTrue((ROOT / "theme.css").exists(), "theme.css must exist")
 
+    def test_theme_css_defines_light_dark_and_shared_tokens(self) -> None:
+        theme_css = (ROOT / "theme.css").read_text()
+
+        for marker in [
+            "body.theme-light",
+            "body.theme-dark",
+            "--sl-color-text-normal",
+            "--sl-color-bg-primary",
+            "--sl-color-border-muted",
+            "--sl-color-accent",
+            "--sl-radius-m",
+            "--sl-shadow-surface",
+        ]:
+            self.assertIn(marker, theme_css)
+
 
 if __name__ == "__main__":
     unittest.main()

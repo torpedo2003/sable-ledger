@@ -2,3 +2,169 @@
 Sable Ledger
 An Obsidian theme inspired by warm editorial interfaces.
 */
+
+body {
+  --sl-font-interface: "Aptos", "Segoe UI Variable Text", "SF Pro Text", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --sl-font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "New York", ui-serif, serif;
+  --sl-font-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Code", "IBM Plex Mono", ui-monospace, monospace;
+
+  --sl-radius-s: 8px;
+  --sl-radius-m: 14px;
+  --sl-radius-l: 20px;
+
+  --sl-shadow-surface: 0 16px 40px -24px rgb(33 28 23 / 0.24);
+  --sl-shadow-floating: 0 24px 60px -28px rgb(20 16 13 / 0.32);
+
+  --font-interface: var(--sl-font-interface);
+  --font-text: var(--sl-font-interface);
+  --font-monospace: var(--sl-font-mono);
+  --h1-font: var(--sl-font-heading);
+  --h2-font: var(--sl-font-heading);
+  --h3-font: var(--sl-font-heading);
+
+  --radius-s: var(--sl-radius-s);
+  --radius-m: var(--sl-radius-m);
+  --radius-l: var(--sl-radius-l);
+
+  --line-height-normal: 1.72;
+  --line-height-tight: 1.3;
+  --size-4-4: 1.1rem;
+}
+
+body.theme-light {
+  --sl-color-bg-primary: #f4efe7;
+  --sl-color-bg-primary-alt: #efe7db;
+  --sl-color-bg-secondary: #f8f4ed;
+  --sl-color-bg-secondary-alt: #ece3d6;
+  --sl-color-bg-tertiary: #e4d8c6;
+  --sl-color-surface-raised: rgb(255 252 247 / 0.82);
+  --sl-color-surface-floating: rgb(251 245 237 / 0.92);
+
+  --sl-color-text-normal: #2b241d;
+  --sl-color-text-muted: #6f6456;
+  --sl-color-text-faint: #958877;
+  --sl-color-text-accent: #8f5d3f;
+
+  --sl-color-border-muted: rgb(120 98 72 / 0.16);
+  --sl-color-border-strong: rgb(92 70 44 / 0.28);
+  --sl-color-border-selection: rgb(143 93 63 / 0.32);
+
+  --sl-color-accent: #b36a45;
+  --sl-color-accent-hover: #98583a;
+  --sl-color-accent-soft: rgb(179 106 69 / 0.13);
+  --sl-color-selection: rgb(191 145 104 / 0.18);
+
+  --background-primary: var(--sl-color-bg-primary);
+  --background-primary-alt: var(--sl-color-bg-primary-alt);
+  --background-secondary: var(--sl-color-bg-secondary);
+  --background-secondary-alt: var(--sl-color-bg-secondary-alt);
+  --background-modifier-hover: rgb(143 93 63 / 0.08);
+  --background-modifier-active-hover: rgb(143 93 63 / 0.12);
+  --background-modifier-border: var(--sl-color-border-muted);
+  --background-modifier-border-hover: var(--sl-color-border-strong);
+  --background-modifier-form-field: rgb(255 250 244 / 0.88);
+  --background-modifier-box-shadow: none;
+  --background-modifier-success: rgb(82 127 94 / 0.14);
+  --background-modifier-error: rgb(173 83 68 / 0.14);
+  --background-modifier-message: rgb(203 171 120 / 0.2);
+
+  --text-normal: var(--sl-color-text-normal);
+  --text-muted: var(--sl-color-text-muted);
+  --text-faint: var(--sl-color-text-faint);
+  --text-accent: var(--sl-color-text-accent);
+  --text-accent-hover: var(--sl-color-accent-hover);
+  --interactive-accent: var(--sl-color-accent);
+  --interactive-accent-hover: var(--sl-color-accent-hover);
+  --text-selection: var(--sl-color-selection);
+  --icon-color-hover: var(--sl-color-text-normal);
+
+  --titlebar-text-color-focused: var(--sl-color-text-normal);
+  --tab-text-color: var(--sl-color-text-muted);
+  --tab-text-color-active: var(--sl-color-text-normal);
+  --tab-text-color-focused: var(--sl-color-text-normal);
+  --tab-background-active: rgb(255 250 244 / 0.68);
+  --tab-divider-color: transparent;
+
+  --code-normal: #5f3f31;
+  --code-background: rgb(255 249 242 / 0.9);
+  --blockquote-background-color: rgb(255 250 244 / 0.6);
+}
+
+body.theme-dark {
+  --sl-color-bg-primary: #171310;
+  --sl-color-bg-primary-alt: #1d1814;
+  --sl-color-bg-secondary: #201a16;
+  --sl-color-bg-secondary-alt: #27201b;
+  --sl-color-bg-tertiary: #312923;
+  --sl-color-surface-raised: rgb(34 28 24 / 0.84);
+  --sl-color-surface-floating: rgb(39 32 27 / 0.94);
+
+  --sl-color-text-normal: #f2eadf;
+  --sl-color-text-muted: #c4b5a4;
+  --sl-color-text-faint: #8e7e6d;
+  --sl-color-text-accent: #e2b48f;
+
+  --sl-color-border-muted: rgb(234 214 189 / 0.12);
+  --sl-color-border-strong: rgb(234 214 189 / 0.22);
+  --sl-color-border-selection: rgb(217 161 118 / 0.26);
+
+  --sl-color-accent: #d59667;
+  --sl-color-accent-hover: #e6ac81;
+  --sl-color-accent-soft: rgb(213 150 103 / 0.16);
+  --sl-color-selection: rgb(213 150 103 / 0.2);
+
+  --background-primary: var(--sl-color-bg-primary);
+  --background-primary-alt: var(--sl-color-bg-primary-alt);
+  --background-secondary: var(--sl-color-bg-secondary);
+  --background-secondary-alt: var(--sl-color-bg-secondary-alt);
+  --background-modifier-hover: rgb(242 234 223 / 0.06);
+  --background-modifier-active-hover: rgb(242 234 223 / 0.09);
+  --background-modifier-border: var(--sl-color-border-muted);
+  --background-modifier-border-hover: var(--sl-color-border-strong);
+  --background-modifier-form-field: rgb(39 32 27 / 0.9);
+  --background-modifier-box-shadow: none;
+  --background-modifier-success: rgb(112 169 126 / 0.16);
+  --background-modifier-error: rgb(214 120 104 / 0.18);
+  --background-modifier-message: rgb(213 150 103 / 0.18);
+
+  --text-normal: var(--sl-color-text-normal);
+  --text-muted: var(--sl-color-text-muted);
+  --text-faint: var(--sl-color-text-faint);
+  --text-accent: var(--sl-color-text-accent);
+  --text-accent-hover: var(--sl-color-accent-hover);
+  --interactive-accent: var(--sl-color-accent);
+  --interactive-accent-hover: var(--sl-color-accent-hover);
+  --text-selection: var(--sl-color-selection);
+  --icon-color-hover: var(--sl-color-text-normal);
+
+  --titlebar-text-color-focused: var(--sl-color-text-normal);
+  --tab-text-color: var(--sl-color-text-muted);
+  --tab-text-color-active: var(--sl-color-text-normal);
+  --tab-text-color-focused: var(--sl-color-text-normal);
+  --tab-background-active: rgb(45 37 31 / 0.76);
+  --tab-divider-color: transparent;
+
+  --code-normal: #f2c8a6;
+  --code-background: rgb(28 23 19 / 0.92);
+  --blockquote-background-color: rgb(41 34 29 / 0.72);
+
+  --sl-shadow-surface: 0 18px 44px -28px rgb(0 0 0 / 0.66);
+  --sl-shadow-floating: 0 28px 72px -36px rgb(0 0 0 / 0.74);
+}
+
+body {
+  --metadata-label-text-color: var(--text-faint);
+  --metadata-input-text-color: var(--text-normal);
+  --metadata-input-background-active: var(--background-modifier-form-field);
+  --metadata-property-background-active: var(--sl-color-accent-soft);
+
+  --nav-item-color: var(--text-muted);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-color-active: var(--text-normal);
+  --nav-item-background-hover: var(--background-modifier-hover);
+  --nav-item-background-active: var(--sl-color-accent-soft);
+
+  --checklist-done-color: var(--text-faint);
+  --hr-color: var(--sl-color-border-muted);
+  --inline-title-color: var(--text-normal);
+}
