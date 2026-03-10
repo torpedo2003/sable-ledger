@@ -254,19 +254,19 @@ body {
   color: var(--cm-notice-text-default) !important;
 }
 
-.theme-dark .tooltip,
-.theme-dark .hover-popover,
-.theme-dark .popover {
-  background: #f2ece3 !important;
-  color: #000 !important;
-  border: 1px solid rgb(0 0 0 / 0.08);
-  box-shadow: none;
+.tooltip,
+.hover-popover,
+.popover {
+  background: var(--sl-color-surface-floating) !important;
+  color: var(--sl-color-text-normal) !important;
+  border: 1px solid var(--sl-color-border-strong) !important;
+  box-shadow: var(--sl-shadow-floating) !important;
 }
 
-.theme-dark .tooltip *,
-.theme-dark .hover-popover *,
-.theme-dark .popover * {
-  color: #000 !important;
+.tooltip *,
+.hover-popover *,
+.popover * {
+  color: var(--sl-color-text-normal) !important;
 }
 
 body.sable-ledger-strong-accents {
