@@ -63,7 +63,7 @@ body {
   --sl-font-heading: "Anthropic Sans", "Anthropic Sans Text", "Aptos Display", "Segoe UI Variable Display", "SF Pro Display", "Aptos", "Segoe UI Variable Text", "SF Pro Text", ui-sans-serif, system-ui, sans-serif;
   --sl-font-mono: "SFMono-Regular", "JetBrains Mono", "Cascadia Code", "IBM Plex Mono", ui-monospace, monospace;
 
-  --sl-readable-line-width: 1080px;
+  --sl-readable-line-width: 832px;
   --file-line-width: var(--sl-readable-line-width);
   --sl-surface-radius: 14px;
   --sl-accent-light: #8c7b67;
@@ -623,23 +623,18 @@ pre,
   min-height: 0 !important;
 }
 
-.markdown-rendered pre button.copy-code-button {
-  position: absolute;
-  top: -0.18rem !important;
-  right: 0.55rem;
-  bottom: auto !important;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding-top: 0;
-  border: 0;
-  box-shadow: none;
-  background: transparent;
-}
-
-.markdown-rendered pre button.copy-code-button .code-block-flair {
-  margin-top: 0;
-  transform: translateY(-6px) !important;
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-begin .code-block-flair {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0.6rem !important;
+  height: 2.0em !important;   /* 与 box-shadow 高度一致 */
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  z-index: 2 !important;
+  color: var(--text-faint);
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
@@ -653,8 +648,9 @@ pre,
   position: relative;
   border-top: 1px solid var(--sl-code-shell-border);
   border-radius: calc(var(--sl-radius-m) + 2px) calc(var(--sl-radius-m) + 2px) 0 0;
-  padding-top: 1.85rem;
-  box-shadow: inset 0 1.85rem 0 0 var(--sl-code-shell-header);
+  padding-top: 0;                                          /* 去掉 padding，让文字自然撑高 */
+  box-shadow: inset 0 2.1em 0 0 var(--sl-code-shell-header); /* 用 em 跟随行高，覆盖整行 */
+  line-height: var(--line-height-normal);
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin::after {
@@ -662,7 +658,7 @@ pre,
   position: absolute;
   left: 0;
   right: 0;
-  top: 1.85rem;
+  top: 2.1em;                                              /* 同步更新分割线位置 */
   border-top: 1px solid var(--sl-code-shell-border);
 }
 
